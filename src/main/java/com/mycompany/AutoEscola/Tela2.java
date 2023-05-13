@@ -2,7 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.suporte;
+package com.mycompany.AutoEscola;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 /**
  *
@@ -59,6 +64,11 @@ public class Tela2 extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton1.setText("Avançar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton2.setText("Cancelar");
@@ -132,7 +142,44 @@ public class Tela2 extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        String nomeFuncionario = jTextField1.getText();
+        String cpfCliente = jTextPane1.getText();
+        String observacoes = jTextField2.getText();
+        String dataAgendamento = jFormattedTextField1.getText();
+
+        try {
+            // Carrega o driver do banco de dados (substitua o valor entre aspas pelo driver correspondente)
+            Class.forName("com.mysql.jdbc.Driver");
+
+            // Conecta ao banco de dados (substitua os valores entre aspas pelo endereço do banco de dados, usuário e senha)
+            Connection conn = Conexao.conectar();
+
+            // Define a query SQL para inserir os dados na tabela
+            String sql = "INSERT INTO tb_agendamento (nome_funcionario, cpf_cliente, observacoes, data_agendamento) VALUES (?, ?, ?, ?)";
+
+            // Prepara a declaração SQL
+            PreparedStatement statement = conn.prepareStatement(sql);
+
+            // Define os parâmetros da declaração SQL
+            statement.setString(1, nomeFuncionario);
+            statement.setString(2, cpfCliente);
+            statement.setString(3, observacoes);
+            statement.setString(4, dataAgendamento);
+
+            // Executa a declaração SQL
+            statement.executeUpdate();
+
+            // Fecha a conexão com o banco de dados
+            conn.close();
+
+        } catch (ClassNotFoundException | SQLException e) {
+            // Trata o erro
+            e.printStackTrace();
+        }
+    }
+    
+public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -143,16 +190,28 @@ public class Tela2 extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
+
+}
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Tela2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Tela2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Tela2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Tela2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela2.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Tela2.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Tela2.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Tela2.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
