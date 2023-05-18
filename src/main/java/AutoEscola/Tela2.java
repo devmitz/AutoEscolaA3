@@ -2,22 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.AutoEscola;
+package AutoEscola;
 
+import DAO.ConexaoDAO;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-/**
- *
- * @author aryas
- */
+
 public class Tela2 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Tela2
-     */
+
     public Tela2() {
         initComponents();
     }
@@ -149,11 +144,8 @@ public class Tela2 extends javax.swing.JFrame {
         String dataAgendamento = jFormattedTextField1.getText();
 
         try {
-            // Carrega o driver do banco de dados (substitua o valor entre aspas pelo driver correspondente)
-            Class.forName("com.mysql.jdbc.Driver");
-
             // Conecta ao banco de dados (substitua os valores entre aspas pelo endereço do banco de dados, usuário e senha)
-            Connection conn = Conexao.conectar();
+            Connection conn = ConexaoDAO.conectaBD();
 
             // Define a query SQL para inserir os dados na tabela
             String sql = "INSERT INTO tb_agendamento (nome_funcionario, cpf_cliente, observacoes, data_agendamento) VALUES (?, ?, ?, ?)";
@@ -173,7 +165,7 @@ public class Tela2 extends javax.swing.JFrame {
             // Fecha a conexão com o banco de dados
             conn.close();
 
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             // Trata o erro
             e.printStackTrace();
         }

@@ -1,12 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package com.mycompany.AutoEscola;
+package AutoEscola;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
+import DAO.ConexaoDAO;
 
 /**
  *
@@ -21,7 +20,12 @@ public class Tela1 extends javax.swing.JFrame {
         initComponents();
         ButtonCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonCadastroActionPerformed(evt);
+                try {
+                    ButtonCadastroActionPerformed(evt);
+                } catch (ClassNotFoundException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -77,6 +81,7 @@ public class Tela1 extends javax.swing.JFrame {
 
         ButtonCancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         ButtonCancelar.setText("Cancelar");
+
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("RG:");
@@ -205,7 +210,7 @@ public class Tela1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ButtonCadastroActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void ButtonCadastroActionPerformed(java.awt.event.ActionEvent evt) throws ClassNotFoundException {                                         
     // capturar dados da tela
     String nome = jTextFieldCPF.getText();
     String email = jTextFieldNome.getText();
@@ -216,33 +221,47 @@ public class Tela1 extends javax.swing.JFrame {
     String rua = jTextFieldRua.getText();
     String numero = jTextFieldNumero.getText();
     String complemento = jTextFieldComplemento.getText();
+    
+//    TelaUmDTO objitemum = new TelaUmDTO();;;
+//    objitemum.setNome(nome);
+//    objitemum.setEmail(email);
+//    objitemum.setCpf(cpf);
+//    objitemum.setRg(rg);
+//    objitemum.setNumeroTelefone(numeroTelefone);
+//    objitemum.setNumeroCelular(numeroCelular);
+//    objitemum.setRua(rua);
+//    objitemum.setNumero(numero);
+//    objitemum.setComplemento(complemento);
 
     try {
-        // abrir conexão com o banco de dados
-        Connection conn = Conexao.conectar();
 
         // escrever instrução SQL para inserir dados
         String sql = "INSERT INTO dados_cliente (nome, email, cpf, rg, numero_telefone, numero_celular, rua, numero, complemento) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        PreparedStatement statement = conn.prepareStatement(sql);
-        statement.setString(1, nome);
-        statement.setString(2, email);
-        statement.setString(3, cpf);
-        statement.setString(4, rg);
-        statement.setString(5, numeroTelefone);
-        statement.setString(6, numeroCelular);
-        statement.setString(7, rua);
-        statement.setString(8, numero);
-        statement.setString(9, complemento);
+                
+        PreparedStatement ps = null;
+
+        ps = ConexaoDAO.getConnection().prepareStatement(sql);
+
+        ps.setString(1, nome);
+        ps.setString(2, email);
+        ps.setString(3, cpf);
+        ps.setString(4, rg);
+        ps.setString(5, numeroTelefone);
+        ps.setString(6, numeroCelular);
+        ps.setString(7, rua);
+        ps.setString(8, numero);
+        ps.setString(9, complemento);
 
         // executar a instrução SQL
-        statement.executeUpdate();
+        ps.execute();
 
         // fechar a conexão com o banco de dados
-        conn.close();
+        ps.close();
     } catch (SQLException e) {
         // tratar erros
-        e.printStackTrace();
+        //e.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Tela1: " + e);
     }
 }
 
