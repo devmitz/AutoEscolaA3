@@ -1,11 +1,11 @@
 package AutoEscola;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 import DAO.ConexaoDAO;
+
 
 /**
  *
@@ -42,22 +42,22 @@ public class Tela1 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextFieldCPF = new javax.swing.JTextField();
-        jTextFieldNome = new javax.swing.JTextField();
-        jTextFieldEmail = new javax.swing.JTextField();
+        txtCPF = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         ButtonCancelar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jTextFieldRG = new javax.swing.JTextField();
+        txtRG = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextFieldNumeroTelefonico = new javax.swing.JTextField();
+        txtNumTel = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextFieldNumeroCelular = new javax.swing.JTextField();
+        txtNumCel = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextFieldRua = new javax.swing.JTextField();
+        txtRua = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextFieldNumero = new javax.swing.JTextField();
+        txtNum = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextFieldComplemento = new javax.swing.JTextField();
+        txtCompl = new javax.swing.JTextField();
         ButtonCadastro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -73,11 +73,11 @@ public class Tela1 extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("CPF:");
 
-        jTextFieldCPF.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtCPF.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jTextFieldNome.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtNome.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jTextFieldEmail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtEmail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         ButtonCancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         ButtonCancelar.setText("Cancelar");
@@ -86,32 +86,34 @@ public class Tela1 extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("RG:");
 
-        jTextFieldRG.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtRG.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("Numero Telefonico:");
 
-        jTextFieldNumeroTelefonico.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtNumTel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Numero Celular:");
 
-        jTextFieldNumeroCelular.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtNumCel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel7.setText("Rua:");
 
-        jTextFieldRua.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtRua.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setText("Número:");
 
-        jTextFieldNumero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtNum.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel9.setText("Complemento:");
 
-        jTextFieldComplemento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtCompl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         ButtonCadastro.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         ButtonCadastro.setText("Cadastrar");
@@ -135,22 +137,22 @@ public class Tela1 extends javax.swing.JFrame {
                                 .addComponent(jLabel5))
                             .addGap(36, 36, 36)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextFieldRG, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtRG, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextFieldNumeroTelefonico, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldNumeroCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtNumTel, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNumCel, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addComponent(jLabel6)
                         .addComponent(jLabel7)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addComponent(jLabel8)
                             .addGap(122, 122, 122)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextFieldNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextFieldRua, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextFieldComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtRua, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCompl, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(265, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -164,39 +166,39 @@ public class Tela1 extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextFieldRG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtRG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextFieldNumeroTelefonico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNumTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextFieldNumeroCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNumCel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextFieldRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextFieldNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextFieldComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCompl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(ButtonCancelar)
                 .addGap(46, 46, 46))
@@ -212,32 +214,23 @@ public class Tela1 extends javax.swing.JFrame {
 
     private void ButtonCadastroActionPerformed(java.awt.event.ActionEvent evt) throws ClassNotFoundException {                                         
     // capturar dados da tela
-    String nome = jTextFieldCPF.getText();
-    String email = jTextFieldNome.getText();
-    String cpf = jTextFieldEmail.getText();
-    String rg = jTextFieldRG.getText();
-    String numeroTelefone = jTextFieldNumeroTelefonico.getText();
-    String numeroCelular = jTextFieldNumeroCelular.getText();
-    String rua = jTextFieldRua.getText();
-    String numero = jTextFieldNumero.getText();
-    String complemento = jTextFieldComplemento.getText();
-    
-//    TelaUmDTO objitemum = new TelaUmDTO();;;
-//    objitemum.setNome(nome);
-//    objitemum.setEmail(email);
-//    objitemum.setCpf(cpf);
-//    objitemum.setRg(rg);
-//    objitemum.setNumeroTelefone(numeroTelefone);
-//    objitemum.setNumeroCelular(numeroCelular);
-//    objitemum.setRua(rua);
-//    objitemum.setNumero(numero);
-//    objitemum.setComplemento(complemento);
+    int cpf = Integer.parseInt(txtCPF.getText());
+    String nome = txtNome.getText(); 
+    String email = txtEmail.getText();
+    int rg = Integer.parseInt(txtRG.getText());
+    int numeroTelefone = Integer.parseInt(txtNumTel.getText());
+    int numeroCelular = Integer.parseInt(txtNumCel.getText());
+    String rua = txtRua.getText();
+    int numero = Integer.parseInt(txtNum.getText());
+    String complemento = txtCompl.getText();
 
+
+    
     try {
 
         // escrever instrução SQL para inserir dados
         String sql = "INSERT INTO dados_cliente (nome, email, cpf, rg, numero_telefone, numero_celular, rua, numero, complemento) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
                 
         PreparedStatement ps = null;
 
@@ -245,13 +238,23 @@ public class Tela1 extends javax.swing.JFrame {
 
         ps.setString(1, nome);
         ps.setString(2, email);
-        ps.setString(3, cpf);
-        ps.setString(4, rg);
-        ps.setString(5, numeroTelefone);
-        ps.setString(6, numeroCelular);
+        ps.setInt(3, cpf);
+        ps.setInt(4, rg);
+        ps.setInt(5, numeroTelefone);
+        ps.setInt(6, numeroCelular);
         ps.setString(7, rua);
-        ps.setString(8, numero);
+        ps.setInt(8, numero);
         ps.setString(9, complemento);
+
+        // ps.setString(1, "joao");
+        // ps.setString(2, "email@email.com");
+        // ps.setString(3, "2331241");
+        // ps.setString(4, "1231231");
+        // ps.setString(5, "13213321");
+        // ps.setString(6, "1231231");
+        // ps.setString(7, "rua legal");
+        // ps.setString(8, "321");
+        // ps.setString(9, "das 123");
 
         // executar a instrução SQL
         ps.execute();
@@ -312,14 +315,14 @@ public class Tela1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextFieldCPF;
-    private javax.swing.JTextField jTextFieldComplemento;
-    private javax.swing.JTextField jTextFieldEmail;
-    private javax.swing.JTextField jTextFieldNome;
-    private javax.swing.JTextField jTextFieldNumero;
-    private javax.swing.JTextField jTextFieldNumeroCelular;
-    private javax.swing.JTextField jTextFieldNumeroTelefonico;
-    private javax.swing.JTextField jTextFieldRG;
-    private javax.swing.JTextField jTextFieldRua;
+    private javax.swing.JTextField txtCPF;
+    private javax.swing.JTextField txtCompl;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtNum;
+    private javax.swing.JTextField txtNumCel;
+    private javax.swing.JTextField txtNumTel;
+    private javax.swing.JTextField txtRG;
+    private javax.swing.JTextField txtRua;
     // End of variables declaration//GEN-END:variables
 }

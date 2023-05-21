@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package AutoEscola;
 
 import DAO.ConexaoDAO;
@@ -139,31 +135,36 @@ public class Tela2 extends javax.swing.JFrame {
      */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         String nomeFuncionario = jTextField1.getText();
-        String cpfCliente = jTextPane1.getText();
+        int cpfCliente = Integer.parseInt(jTextPane1.getText());
         String observacoes = jTextField2.getText();
         String dataAgendamento = jFormattedTextField1.getText();
 
         try {
             // Conecta ao banco de dados (substitua os valores entre aspas pelo endereço do banco de dados, usuário e senha)
-            Connection conn = ConexaoDAO.conectaBD();
+            
+
+            
 
             // Define a query SQL para inserir os dados na tabela
             String sql = "INSERT INTO tb_agendamento (nome_funcionario, cpf_cliente, observacoes, data_agendamento) VALUES (?, ?, ?, ?)";
 
+            PreparedStatement ps = null;
+
+            ps = ConexaoDAO.getConnection().prepareStatement(sql);
+
             // Prepara a declaração SQL
-            PreparedStatement statement = conn.prepareStatement(sql);
 
             // Define os parâmetros da declaração SQL
-            statement.setString(1, nomeFuncionario);
-            statement.setString(2, cpfCliente);
-            statement.setString(3, observacoes);
-            statement.setString(4, dataAgendamento);
+            ps.setString(1, nomeFuncionario);
+            ps.setInt(2, cpfCliente);
+            ps.setString(3, observacoes);
+            ps.setString(4, dataAgendamento);
 
             // Executa a declaração SQL
-            statement.executeUpdate();
+            ps.executeUpdate();
 
             // Fecha a conexão com o banco de dados
-            conn.close();
+            ps.close();
 
         } catch (SQLException e) {
             // Trata o erro

@@ -43,13 +43,13 @@
                           </Group>
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextFieldRG" min="-2" pref="203" max="-2" attributes="0"/>
-                              <Component id="jTextFieldCPF" min="-2" pref="203" max="-2" attributes="0"/>
-                              <Component id="jTextFieldNome" min="-2" pref="315" max="-2" attributes="0"/>
-                              <Component id="jTextFieldEmail" alignment="0" min="-2" pref="406" max="-2" attributes="0"/>
+                              <Component id="txtRG" min="-2" pref="203" max="-2" attributes="0"/>
+                              <Component id="txtCPF" min="-2" pref="203" max="-2" attributes="0"/>
+                              <Component id="txtNome" min="-2" pref="315" max="-2" attributes="0"/>
+                              <Component id="txtEmail" alignment="0" min="-2" pref="406" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="jTextFieldNumeroTelefonico" min="-2" pref="203" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldNumeroCelular" alignment="1" min="-2" pref="203" max="-2" attributes="0"/>
+                                  <Component id="txtNumTel" min="-2" pref="203" max="-2" attributes="0"/>
+                                  <Component id="txtNumCel" alignment="1" min="-2" pref="203" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -59,9 +59,9 @@
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextFieldNumero" min="-2" pref="203" max="-2" attributes="0"/>
-                              <Component id="jTextFieldRua" min="-2" pref="406" max="-2" attributes="0"/>
-                              <Component id="jTextFieldComplemento" alignment="0" min="-2" pref="203" max="-2" attributes="0"/>
+                              <Component id="txtNum" min="-2" pref="203" max="-2" attributes="0"/>
+                              <Component id="txtRua" min="-2" pref="406" max="-2" attributes="0"/>
+                              <Component id="txtCompl" alignment="0" min="-2" pref="203" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -83,47 +83,47 @@
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldCPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCPF" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNome" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtEmail" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldRG" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtRG" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldNumeroTelefonico" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNumTel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldNumeroCelular" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNumCel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldRua" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtRua" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNum" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldComplemento" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCompl" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="81" max="32767" attributes="0"/>
               <Component id="ButtonCancelar" min="-2" max="-2" attributes="0"/>
@@ -164,21 +164,21 @@
         <Property name="text" type="java.lang.String" value="CPF:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldCPF">
+    <Component class="javax.swing.JTextField" name="txtCPF">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldNome">
+    <Component class="javax.swing.JTextField" name="txtNome">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldEmail">
+    <Component class="javax.swing.JTextField" name="txtEmail">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
@@ -204,7 +204,7 @@
         <Property name="text" type="java.lang.String" value="RG:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldRG">
+    <Component class="javax.swing.JTextField" name="txtRG">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
@@ -219,7 +219,7 @@
         <Property name="text" type="java.lang.String" value="Numero Telefonico:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldNumeroTelefonico">
+    <Component class="javax.swing.JTextField" name="txtNumTel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
@@ -234,7 +234,7 @@
         <Property name="text" type="java.lang.String" value="Numero Celular:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldNumeroCelular">
+    <Component class="javax.swing.JTextField" name="txtNumCel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
@@ -249,14 +249,14 @@
         <Property name="text" type="java.lang.String" value="Rua:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldRua">
+    <Component class="javax.swing.JTextField" name="txtRua">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldRuaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRuaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
@@ -267,14 +267,14 @@
         <Property name="text" type="java.lang.String" value="N&#xfa;mero:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldNumero">
+    <Component class="javax.swing.JTextField" name="txtNum">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldNumeroActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNumActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
@@ -285,14 +285,14 @@
         <Property name="text" type="java.lang.String" value="Complemento:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldComplemento">
+    <Component class="javax.swing.JTextField" name="txtCompl">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldComplementoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtComplActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ButtonCadastro">

@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "AutoEscola",
+            "request": "launch",
+            "mainClass": "AutoEscola.AutoEscola",
+            "projectName": "AutoEscola"
+        },
+        {
+            "type": "java",
+            "name": "Tela1",
+            "request": "launch",
+            "mainClass": "AutoEscola.Tela1",
+            "projectName": "AutoEscola"
+        },
+        {
+            "type": "java",
+            "name": "Tela2",
+            "request": "launch",
+            "mainClass": "AutoEscola.Tela2",
+            "projectName": "AutoEscola"
+        },
+        {
+            "type": "java",
+            "name": "Tela3",
+            "request": "launch",
+            "mainClass": "AutoEscola.Tela3",
+            "projectName": "AutoEscola"
+        },
+        {
+            "type": "java",
+            "name": "Tela4",
+            "request": "launch",
+            "mainClass": "AutoEscola.Tela4",
+            "projectName": "AutoEscola"
+        }
+    ]
+}
