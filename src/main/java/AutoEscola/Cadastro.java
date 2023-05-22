@@ -11,12 +11,12 @@ import DAO.ConexaoDAO;
  *
  * @author aryas
  */
-public class Tela1 extends javax.swing.JFrame {
+public class Cadastro extends javax.swing.JFrame {
 
     /**
      * Creates new form Tela1
      */
-    public Tela1() {
+    public Cadastro() {
         initComponents();
         ButtonCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,7 +82,6 @@ public class Tela1 extends javax.swing.JFrame {
         ButtonCancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         ButtonCancelar.setText("Cancelar");
 
-
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("RG:");
 
@@ -108,7 +107,6 @@ public class Tela1 extends javax.swing.JFrame {
         jLabel8.setText("Número:");
 
         txtNum.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel9.setText("Complemento:");
@@ -214,14 +212,14 @@ public class Tela1 extends javax.swing.JFrame {
 
     private void ButtonCadastroActionPerformed(java.awt.event.ActionEvent evt) throws ClassNotFoundException {                                         
     // capturar dados da tela
-    int cpf = Integer.parseInt(txtCPF.getText());
-    String nome = txtNome.getText(); 
+    String cpf = txtCPF.getText();
+    String nome = txtNome.getText().toUpperCase();
     String email = txtEmail.getText();
-    int rg = Integer.parseInt(txtRG.getText());
-    int numeroTelefone = Integer.parseInt(txtNumTel.getText());
-    int numeroCelular = Integer.parseInt(txtNumCel.getText());
+    String rg = txtRG.getText();
+    String numeroTelefone = txtNumTel.getText();
+    String numeroCelular = txtNumCel.getText();
     String rua = txtRua.getText();
-    int numero = Integer.parseInt(txtNum.getText());
+    String numero = txtNum.getText();
     String complemento = txtCompl.getText();
 
 
@@ -238,23 +236,13 @@ public class Tela1 extends javax.swing.JFrame {
 
         ps.setString(1, nome);
         ps.setString(2, email);
-        ps.setInt(3, cpf);
-        ps.setInt(4, rg);
-        ps.setInt(5, numeroTelefone);
-        ps.setInt(6, numeroCelular);
+        ps.setString(3, cpf);
+        ps.setString(4, rg);
+        ps.setString(5, numeroTelefone);
+        ps.setString(6, numeroCelular);
         ps.setString(7, rua);
-        ps.setInt(8, numero);
+        ps.setString(8, numero);
         ps.setString(9, complemento);
-
-        // ps.setString(1, "joao");
-        // ps.setString(2, "email@email.com");
-        // ps.setString(3, "2331241");
-        // ps.setString(4, "1231231");
-        // ps.setString(5, "13213321");
-        // ps.setString(6, "1231231");
-        // ps.setString(7, "rua legal");
-        // ps.setString(8, "321");
-        // ps.setString(9, "das 123");
 
         // executar a instrução SQL
         ps.execute();
@@ -264,7 +252,7 @@ public class Tela1 extends javax.swing.JFrame {
     } catch (SQLException e) {
         // tratar erros
         //e.printStackTrace();
-        JOptionPane.showMessageDialog(null, "Tela1: " + e);
+        JOptionPane.showMessageDialog(null, "Cadastro: " + e);
     }
 }
 
@@ -285,20 +273,21 @@ public class Tela1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Tela1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Tela1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Tela1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Tela1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Tela1().setVisible(true);
+                new Cadastro().setVisible(true);
             }
         });
     }

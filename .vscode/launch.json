@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Cadastro",
+            "request": "launch",
+            "mainClass": "AutoEscola.Cadastro",
+            "projectName": "AutoEscola"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

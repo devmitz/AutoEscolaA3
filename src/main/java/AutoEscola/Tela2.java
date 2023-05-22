@@ -1,9 +1,9 @@
 package AutoEscola;
 
 import DAO.ConexaoDAO;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 
 public class Tela2 extends javax.swing.JFrame {
@@ -11,6 +11,16 @@ public class Tela2 extends javax.swing.JFrame {
 
     public Tela2() {
         initComponents();
+        buttonAvancar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                try {
+                    buttonAvancarActionPerformed(evt);
+                } catch (ClassNotFoundException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     /**
@@ -29,8 +39,8 @@ public class Tela2 extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        buttonAvancar = new javax.swing.JButton();
+        buttonCancelar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
 
@@ -48,21 +58,16 @@ public class Tela2 extends javax.swing.JFrame {
 
         jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/M/yy"))));
+        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yy"))));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Data:");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton1.setText("Avançar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        buttonAvancar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        buttonAvancar.setText("Avançar");
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton2.setText("Cancelar");
+        buttonCancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        buttonCancelar.setText("Cancelar");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("Observações:");
@@ -91,11 +96,11 @@ public class Tela2 extends javax.swing.JFrame {
                                         .addComponent(jScrollPane2)
                                         .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
                                         .addComponent(jTextField1)))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(245, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2)
+                        .addComponent(buttonCancelar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 417, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(buttonAvancar)
                         .addGap(123, 123, 123))))
         );
         layout.setVerticalGroup(
@@ -122,8 +127,8 @@ public class Tela2 extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
+                    .addComponent(buttonCancelar)
+                    .addComponent(buttonAvancar))
                 .addGap(55, 55, 55))
         );
 
@@ -132,43 +137,33 @@ public class Tela2 extends javax.swing.JFrame {
 
     /**
      * @param args the command line arguments
+     * @throws ClassNotFoundException
      */
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void buttonAvancarActionPerformed(java.awt.event.ActionEvent evt) throws ClassNotFoundException {
         String nomeFuncionario = jTextField1.getText();
         int cpfCliente = Integer.parseInt(jTextPane1.getText());
         String observacoes = jTextField2.getText();
         String dataAgendamento = jFormattedTextField1.getText();
 
         try {
-            // Conecta ao banco de dados (substitua os valores entre aspas pelo endereço do banco de dados, usuário e senha)
-            
-
-            
-
-            // Define a query SQL para inserir os dados na tabela
-            String sql = "INSERT INTO tb_agendamento (nome_funcionario, cpf_cliente, observacoes, data_agendamento) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO dados_formulario (nome_funcionario, cpf_cliente, observacoes, data) VALUES (?, ?, ?, ?)";
 
             PreparedStatement ps = null;
 
             ps = ConexaoDAO.getConnection().prepareStatement(sql);
-
-            // Prepara a declaração SQL
-
-            // Define os parâmetros da declaração SQL
+            
             ps.setString(1, nomeFuncionario);
             ps.setInt(2, cpfCliente);
             ps.setString(3, observacoes);
             ps.setString(4, dataAgendamento);
 
-            // Executa a declaração SQL
             ps.executeUpdate();
 
-            // Fecha a conexão com o banco de dados
             ps.close();
 
         } catch (SQLException e) {
-            // Trata o erro
-            e.printStackTrace();
+            //e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Tela 2: " + e);
         }
     }
     
@@ -217,8 +212,8 @@ public static void main(String args[]) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton buttonAvancar;
+    private javax.swing.JButton buttonCancelar;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
